@@ -1,336 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/mainLayout"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:background="@color/viewBgColor"
+    >
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/mainLayout"
+    <TextView
+        android:id="@+id/myTextView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/viewBgColor"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="-280dp">
+        android:layout_height="30pt"
+        android:text="@string/tv1Text"
+        android:textColor="@color/textColor"
+        android:textSize="14pt"
+        android:gravity="center"
+        android:fontFamily="@font/cambria"
+        android:textStyle="bold"
+        />
+
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:layout_below="@id/myTextView1"
+        android:background="@color/btnColor"
+        android:fontFamily="@font/lucida"
+        android:text="@string/btnText"
+        android:textColor="@color/textColor"
+        android:textSize="11pt" />
+
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="5pt"
+        android:layout_below="@id/convertButton"
+        />
+
+    <LinearLayout
+        android:id="@+id/child1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/space1">
+
+        <EditText
+            android:id="@+id/inputText"
+            android:layout_width="0dip"
+            android:layout_height="20pt"
+            android:layout_weight="0.2"
+            android:text="@string/inputText"
+            android:textColor="@color/textColor"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:fontFamily="@font/cambria"
+            android:layout_gravity="center"
+            android:background="@color/etBgColor"
+            android:inputType="number"
+            android:hint="@string/hint"
+            />
+
+        <Spinner
+            android:id="@+id/oriList"
+            android:layout_width="0dip"
+            android:layout_height="20pt"
+            android:layout_weight="0.24"
+            android:entries="@array/tempList"
+            android:prompt="@string/inputPrompt"
+            android:spinnerMode="dialog"
+            android:gravity="center"
+            />
 
         <TextView
-            android:id="@+id/myTextView1"
-            android:layout_width="match_parent"
-            android:layout_height="30pt"
-            android:fontFamily="@font/cambria"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:text="@string/tv1Text"
+            android:id="@+id/myTextView2"
+            android:layout_width="0dip"
+            android:layout_height="20pt"
+            android:layout_weight="0.12"
+            android:text="@string/tv2Text"
             android:textColor="@color/textColor"
             android:textSize="14pt"
-            android:textStyle="bold" />
-
-
-        <Button
-            android:id="@+id/convertButton"
-            android:layout_width="match_parent"
-            android:layout_height="20pt"
-            android:layout_below="@id/myTextView1"
-            android:background="@color/btnColor"
-            android:fontFamily="@font/lucida"
-            android:text="@string/btnText"
-            android:textColor="@color/textColor"
-            android:textSize="11pt" />
-
-        <Space
-            android:id="@+id/space1"
-            android:layout_width="match_parent"
-            android:layout_height="5pt"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/convertButton"/>
-
-        <LinearLayout
-            android:id="@+id/child1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/space1">
-<!--A5-->
-            <EditText
-                android:id="@+id/inputText"
-                android:layout_width="0dip"
-                android:layout_height="20pt"
-                android:layout_weight="0.2"
-                android:text="@string/inputText"
-                android:textColor="@color/textColor"
-                android:textSize="10pt"
-                android:textStyle="bold"
-                android:fontFamily="@font/cambria"
-                android:layout_gravity="center"
-                android:background="@color/etBgColor"
-                android:inputType="number"
-                android:hint="@string/hint"
-                />
-
-                <Spinner
-                    android:id="@+id/oriList"
-                    android:layout_width="0dip"
-                    android:layout_height="20pt"
-                    android:layout_weight="0.24"
-                    android:entries="@array/tempList"
-                    android:prompt="@string/inputPrompt"
-                    android:spinnerMode="dialog"
-                    android:gravity="center"
-                    android:checked="false"
-                    />
-
-                <TextView
-                    android:id="@+id/myTextView2"
-                    android:layout_width="0dip"
-                    android:layout_height="20pt"
-                    android:layout_weight="0.12"
-                    android:text="@string/tv2Text"
-                    android:textColor="@color/textColor"
-                    android:textSize="14pt"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/cambria"
-                    android:gravity="center"
-                    />
-
-                <EditText
-                    android:id="@+id/outputText"
-                    android:layout_width="0dp"
-                    android:layout_height="20pt"
-                    android:layout_weight="0.2"
-                    android:text="@string/inputText"
-                    android:textColor="@color/textColor"
-                    android:textSize="10pt"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/cambria"
-                    android:layout_gravity="center"
-                    android:background="@color/etBgColor"
-                    android:inputType="number"
-                    android:enabled="false"
-
-                    />
-
-            <Spinner
-                android:id="@+id/convList"
-                android:layout_width="0dip"
-                android:layout_height="20pt"
-                android:layout_weight="0.24"
-                android:entries="@array/tempList"
-                android:prompt="@string/inputPrompt"
-                android:spinnerMode="dialog"
-                android:gravity="center"
-                android:checked="false"
-                />
-<!--A5-->
-
-
-        </LinearLayout>
-<!--A6-->
-        <LinearLayout
-            android:id="@+id/child2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/child1"
-            android:layout_marginTop="5pt"
-            >
-            <CheckBox
-                android:id="@+id/chkRounded"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chkRound"
-                android:textSize="8pt"
-                android:gravity="center"
-                android:checked="true"/>
-            <CheckBox
-                android:id="@+id/chkFormula"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chkForm"
-                android:textSize="8pt"
-                android:gravity="center"/>
-
-
-
-
-        </LinearLayout>
-<!--        &lt;!&ndash;A6&ndash;&gt;-->
-
-
-        <!--A7-->
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="@font/cambria"
             android:gravity="center"
-            android:layout_marginTop="5pt"
-            android:orientation="horizontal"
-            android:layout_below="@id/child2">
+            />
 
-            <RadioButton
-                android:id="@+id/rbTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rbTemp"
-                android:checked="true"/>
+        <EditText
+            android:id="@+id/outputText"
+            android:layout_width="0dp"
+            android:layout_height="20pt"
+            android:layout_weight="0.2"
+            android:text="@string/inputText"
+            android:textColor="@color/textColor"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:fontFamily="@font/cambria"
+            android:layout_gravity="center"
+            android:background="@color/etBgColor"
+            android:inputType="number"
+            android:enabled="false"
 
-            <RadioButton
-                android:id="@+id/rbDist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rbDist"
-                android:checked="false"/>
+            />
 
-
-            <RadioButton
-                android:id="@+id/rbWeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rbWeight"
-                android:checked="false"/>
-
-
-
-
-        </RadioGroup>
-        <!--A7-->
-
-        <!--A8-->
-
-
-<!--        <TableLayout-->
-<!--            android:id="@+id/table"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/imgFormula"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="5pt"-->
-<!--            android:stretchColumns="*">-->
-
-<!--            <TableRow>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv11"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/header_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="@string/rbTemp"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textStyle="bold"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv12"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/cell_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="\u2103"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv13"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/cell_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="\u2109"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv14"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/cell_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="273.15 K"-->
-<!--                    />-->
-<!--            </TableRow>-->
-
-<!--            <TableRow>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv21"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/header_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="@string/rbDist"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textStyle="bold"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv22"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/cell_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="1 Meter"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv23"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/cell_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="39.3701 Inch"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv24"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/cell_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="3.2808 feet"-->
-<!--                    />-->
-<!--            </TableRow>-->
-
-<!--            <TableRow>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv31"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/header_style"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="@string/rbWeight"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textStyle="bold"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv32"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv33"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/tv34"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    />-->
-<!--            </TableRow>-->
-
-<!--        </TableLayout>-->
-
-
-
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="89dp"
-            android:layout_height="89dp"
-            android:src="@drawable/temperature"
-            android:layout_marginTop="11pt"
-            android:layout_centerHorizontal="true"
-            android:visibility="invisible"
+        <Spinner
+            android:id="@+id/convList"
+            android:layout_width="0dip"
+            android:layout_height="20pt"
+            android:layout_weight="0.24"
+            android:entries="@array/tempList"
+            android:prompt="@string/inputPrompt"
+            android:spinnerMode="dialog"
+            android:gravity="center"
             />
 
 
-    </RelativeLayout>
-    
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/child2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/child1"
+        android:layout_marginTop="5pt"
+        >
+        <CheckBox
+            android:id="@+id/chkRounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chkRound"
+            android:textSize="8pt"
+            android:gravity="center"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/chkFormula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chkForm"
+            android:textSize="8pt"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="5pt"
+        android:orientation="horizontal"
+        android:layout_below="@id/child2">
+
+        <RadioButton
+            android:id="@+id/rbTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rbTemp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbDist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rbDist"
+            android:checked="false"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RadioButton
+            android:id="@+id/rbWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rbWeight"
+            android:checked="false"/>
 
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="89dp"
+        android:layout_height="89dp"
+        android:src="@drawable/temperature"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginTop="11dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:stretchColumns="*">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/tv11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_style"
+                android:padding="5dp"
+                android:text="@string/rbTemp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tv12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="0°C"
+                />
+            <TextView
+                android:id="@+id/tv13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="32°F"
+                />
+            <TextView
+                android:id="@+id/tv14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="273.15 K"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/tv21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_style"
+                android:padding="5dp"
+                android:text="@string/rbDist"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tv22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="1 Meter"
+                />
+            <TextView
+                android:id="@+id/tv23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="39.3701 Inch"
+                />
+            <TextView
+                android:id="@+id/tv24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="3.2808 feet"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/tv31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_style"
+                android:padding="5dp"
+                android:text="@string/rbWeight"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tv32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="1 Kg"
+
+                />
+            <TextView
+                android:id="@+id/tv33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="35.2740 ounce"
+                />
+            <TextView
+                android:id="@+id/tv34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_style"
+                android:padding="5dp"
+                android:text="2.2046 pound"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+</android.widget.RelativeLayout>
