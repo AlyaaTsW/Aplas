@@ -9,15 +9,18 @@ public class ResourceTest extends ViewTest {
         resource =rsc;
     }
 
-    public void testStringResource(String name, String expected) {
+    public void testStringResource(String name,String expected) {
         int resId = resource.getIdentifier(name, "string", getClass().getPackage().getName());
         testItem(0,resId,"String "+name+" id is not exist",2);
         testItem(expected,resource.getString(resId),"String "+name+" value is not valid",1);
     }
 
-    public void testStringArrayResource(String name, String[] expected) {
+    public void testStringArrayResource(String name,String[] expected) {
         int resId = resource.getIdentifier(name, "array", getClass().getPackage().getName());
         testItem(0,resId,"String array "+name+" id is not exist",2);
+        String[] str = resource.getStringArray(resId);
+        testItem(arrayToString(expected),arrayToString(str),"String array "+name+" value is not valid",1);
+        /*
         String[] str = resource.getStringArray(resId);
         boolean found=false;
         int i=0;
@@ -27,15 +30,16 @@ public class ResourceTest extends ViewTest {
             testItem(expected[i],str[i],"String array "+name+" value is not valid",1);
         }
         testItem(!found,!found,"String array "+name+" value is not valid",4);
+        */
     }
 
-    public void testColorResource(String name, int expected) {
+    public void testColorResource(String name,int expected) {
         int resId = resource.getIdentifier(name, "color", getClass().getPackage().getName());
         testItem(0,resId,"Color "+name+" id is not exist",2);
         testItem(expected,resource.getColor(resId),"Color "+name+" value is not valid",1);
     }
 
-    public void testFontResource(String name, String expected) {
+    public void testFontResource(String name,String expected) {
         //int resId = R.font.cambria;
         //Typeface font = Typeface.createFromAsset(resource.getAssets(),name);
         int resId = resource.getIdentifier(name, "font", getClass().getPackage().getName());
